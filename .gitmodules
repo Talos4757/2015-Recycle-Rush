@@ -1,0 +1,3 @@
+[submodule "src/Submodules/JetServer"]
+	path = src/Submodules/JetServer
+	url = git@github.com:Talos4757/JetServer.git
