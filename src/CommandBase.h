@@ -3,9 +3,12 @@
 
 #include <string>
 #include "Commands/Command.h"
-#include "Subsystems/ExampleSubsystem.h"
+#include "Subsystems/Chassis.h"
 #include "OI.h"
 #include "WPILib.h"
+#include "Subsystems/Lifter.h"
+#include "Subsystems/Vagina.h"
+
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -19,8 +22,10 @@ public:
 	CommandBase();
 	static void init();
 	// Create a single static instance of all of your subsystems
-	static ExampleSubsystem *examplesubsystem;
+	static Lifter *lifter;
+	static Chassis *chassis;
 	static OI *oi;
+	static Vagina *vagina;
 };
 
 #endif

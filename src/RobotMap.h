@@ -20,4 +20,14 @@
 //const int RANGE_FINDER_PORT = 1;
 //const int RANGE_FINDER_MODULE = 1;
 
+//change this to real values
+#define FRONT_LEFT_MOTOR 1
+#define FRONT_RIGHT_MOTOR 2
+#define REAR_LEFT_MOTOR 3
+#define REAR_RIGHT_MOTOR 4
+#define MIDDLE_MOTOR 5
+#define LIFT_ENGINE 6
+#define VAGINA_MOTOR_RIGHT 7
+#define VAGINA_MOTOR_LEFT 8
+
 #endif
