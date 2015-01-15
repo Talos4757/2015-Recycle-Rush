@@ -20,4 +20,15 @@
 //const int RANGE_FINDER_PORT = 1;
 //const int RANGE_FINDER_MODULE = 1;
 
+//change this to real values
+const int FRONT_LEFT_MOTOR = 1;
+const int FRONT_RIGHT_MOTOR = 2;
+const int REAR_LEFT_MOTOR = 3;
+const int REAR_RIGHT_MOTOR = 4;
+
+const int MIDDLE_MOTOR = 5;
+
+const int LEFT_JOYSTICK = 1;
+const int RIGHT_JOYSTICK = 2;
+
 #endif
