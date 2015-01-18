@@ -7,8 +7,8 @@ class OI
 {
 private:
 	Joystick *leftStick, *rightStick;
-	const int LEFT_JOYSTICK = 1;
-	const int RIGHT_JOYSTICK = 2;
+	const int LEFT_JOYSTICK = 0;
+	const int RIGHT_JOYSTICK = 1;
 public:
 	OI();
 	Joystick* getLeftStick();
