@@ -10,8 +10,8 @@ private:
 	Talon* LiftEngine;
 public:
 	Lifter();
-	void SetHeight(float speed);
 	void InitDefaultCommand();
+	void SetHeight(float speed);
 };
 
 #endif

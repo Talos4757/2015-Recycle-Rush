@@ -13,9 +13,12 @@ public:
 	OI();
 	Joystick* getLeftStick();
 	Joystick* getRightStick();
+	JoystickButton* ArcadeButton;
 	JoystickButton* RotateButton;
 	JoystickButton* LifterUp;
 	JoystickButton* LifterDown;
+	JoystickButton* Open;
+	JoystickButton* Close;
 };
 
 #endif

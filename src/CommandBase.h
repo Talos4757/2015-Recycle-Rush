@@ -26,6 +26,7 @@ public:
 	static Chassis *chassis;
 	static OI *oi;
 	static Vagina *vagina;
+	static Picker *picker;
 };
 
 #endif

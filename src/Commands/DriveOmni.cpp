@@ -16,7 +16,8 @@ void DriveOmni::Initialize()
 void DriveOmni::Execute()
 {
 	float x = oi->getRightStick()->GetAxis(Joystick::kXAxis);
-	chassis->GetMiddleWheel()->SetSpeed(x);
+	chassis->GetMiddleFront()->SetSpeed(x);
+	chassis->GetMiddleRear()->SetSpeed(x);
 	float y = oi->getRightStick()->GetAxis(Joystick::kYAxis);
 	chassis->GetRobotDrive()->TankDrive(y,y,false);
 }

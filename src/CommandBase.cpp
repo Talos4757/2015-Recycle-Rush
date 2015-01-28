@@ -8,6 +8,7 @@ Chassis* CommandBase::chassis = NULL;
 OI* CommandBase::oi = NULL;
 Lifter* CommandBase::lifter=NULL;
 Vagina* CommandBase::vagina=NULL;
+Picker* CommandBase::picker=NULL;
 CommandBase::CommandBase(char const *name) :
 		Command(name)
 {
@@ -27,4 +28,5 @@ void CommandBase::init()
 	chassis = new Chassis();
 	oi = new OI();
 	vagina = new Vagina();
+	picker=new Picker();
 }

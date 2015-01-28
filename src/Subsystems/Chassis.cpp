@@ -4,7 +4,8 @@
 
 Chassis::Chassis() : Subsystem("Chassis")
 {
-	middlewheel = new Talon(MIDDLE_MOTOR);
+	this->mf = new Talon(MIDDLE_MOTOR_FRONT);
+	this->mr=new Talon(MIDDLE_MOTOR_REAR);
 	this->fl=new Talon(FRONT_LEFT_MOTOR);
 	this->fr=new Talon(FRONT_RIGHT_MOTOR);
 	this->rr=new Talon(REAR_RIGHT_MOTOR);
@@ -23,9 +24,14 @@ void Chassis::InitDefaultCommand()
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 
-Talon *Chassis::GetMiddleWheel()
+Talon *Chassis::GetMiddleFront()
 {
-	return middlewheel;
+	return mf;
+}
+
+Talon *Chassis::GetMiddleRear()
+{
+	return mr;
 }
 RobotDrive *Chassis::GetRobotDrive()
 {
