@@ -11,6 +11,7 @@ private:
 public:
 	Lifter();
 	void InitDefaultCommand();
+	Encoder *e;
 	void SetHeight(float speed);
 };
 

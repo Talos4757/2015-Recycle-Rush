@@ -6,11 +6,13 @@ Chassis::Chassis() : Subsystem("Chassis")
 {
 	this->mf = new Talon(MIDDLE_MOTOR_FRONT);
 	this->mr=new Talon(MIDDLE_MOTOR_REAR);
-	this->fl=new Talon(FRONT_LEFT_MOTOR);
-	this->fr=new Talon(FRONT_RIGHT_MOTOR);
-	this->rr=new Talon(REAR_RIGHT_MOTOR);
-	this->rl=new Talon(REAR_LEFT_MOTOR);
-	robotdrive = new RobotDrive(fl,rl, fr, rr);
+	this->fl=new Talon(LEFT_MOTOR);
+	this->fr=new Talon(RIGHT_MOTOR);
+
+	robotdrive = new RobotDrive(fl,fr);
+
+	robotdrive->SetInvertedMotor(static_cast<RobotDrive::MotorType>(RIGHT_MOTOR),true);
+	robotdrive->SetInvertedMotor(static_cast<RobotDrive::MotorType>(LEFT_MOTOR),true);
 }
 
 void Chassis::InitDefaultCommand()

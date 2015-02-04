@@ -17,11 +17,13 @@ private:
 	
 	void DisabledPeriodic()
 	{
+
 		Scheduler::GetInstance()->Run();
 	}
 
 	void AutonomousInit()
 	{
+
 		if (autonomousCommand != NULL)
 			autonomousCommand->Start();
 	}

@@ -8,7 +8,7 @@ class Chassis: public Subsystem
 {
 private:
 	RobotDrive *robotdrive;
-	Talon *mf,*mr, *fl, *fr, *rr, *rl;
+	Talon *mf,*mr, *fl, *fr;
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
 public:

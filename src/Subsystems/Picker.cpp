@@ -1,13 +1,13 @@
-#include "Lifter.h"
+#include "Picker.h"
 #include "../RobotMap.h"
-#include "../Commands/HeightSetter.h"
+#include "../Commands/PickerPos.h"
 
 Picker::Picker() : Subsystem("Picker")
 {
 	this->PickerEngine= new Talon(PICK_ENGINE);
 }
 
-void Lifter::InitDefaultCommand()
+void Picker::InitDefaultCommand()
 {
 	SetDefaultCommand(new PickerPos(0.0f));
 

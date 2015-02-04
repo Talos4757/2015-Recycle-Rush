@@ -1,8 +1,8 @@
 #include "DriveOmni.h"
+#include "../RobotMap.h"
 
 DriveOmni::DriveOmni()
 {
-
 	Requires(chassis);
 }
 
@@ -15,11 +15,26 @@ void DriveOmni::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void DriveOmni::Execute()
 {
-	float x = oi->getRightStick()->GetAxis(Joystick::kXAxis);
-	chassis->GetMiddleFront()->SetSpeed(x);
-	chassis->GetMiddleRear()->SetSpeed(x);
-	float y = oi->getRightStick()->GetAxis(Joystick::kYAxis);
-	chassis->GetRobotDrive()->TankDrive(y,y,false);
+	float x = oi->getRightStick()->GetX();
+	float y = oi->getRightStick()->GetY();
+
+	float moveVal = oi->getRightStick()->GetRawAxis(0);
+	float rotVal = oi->getRightStick()->GetRawAxis(1);
+
+	SmartDashboard::PutNumber("X",x);
+	SmartDashboard::PutNumber("Y",y);
+
+	if(DriverStation::GetInstance()->GetStickButton(1,2))
+	{
+		chassis->GetRobotDrive()->TankDrive(-y,-y,true);
+		chassis->GetMiddleFront()->SetSpeed(-x);
+		chassis->GetMiddleRear()->SetSpeed(-x);
+	}
+	else
+	{
+		chassis->GetRobotDrive()->ArcadeDrive(-moveVal,-rotVal,true);
+	}
+
 }
 
 // Make this return true when this Command no longer needs to run execute()

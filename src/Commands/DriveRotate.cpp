@@ -1,5 +1,5 @@
 #include "DriveRotate.h"
-
+#include "../OI.h"
 DriveRotate::DriveRotate()
 {
 	Requires(chassis);
@@ -14,7 +14,7 @@ void DriveRotate::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void DriveRotate::Execute()
 {
-chassis->GetRobotDrive()->ArcadeDrive(oi->getLeftStick());
+	chassis->GetRobotDrive()->ArcadeDrive(oi->getRightStick(),true);
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -8,6 +8,7 @@
 #include "WPILib.h"
 #include "Subsystems/Lifter.h"
 #include "Subsystems/Vagina.h"
+#include "Subsystems/Picker.h"
 
 
 /**

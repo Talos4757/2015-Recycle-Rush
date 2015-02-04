@@ -1,4 +1,4 @@
-#include "HeightSetter.h"
+#include "PickerPos.h"
 
 PickerPos::PickerPos(float speed)
 {

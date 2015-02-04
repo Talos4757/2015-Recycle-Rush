@@ -21,14 +21,19 @@
 //const int RANGE_FINDER_MODULE = 1;
 
 //change this to real values
-#define FRONT_LEFT_MOTOR 0
-#define FRONT_RIGHT_MOTOR 3
-#define REAR_LEFT_MOTOR 1
-#define REAR_RIGHT_MOTOR 2
-#define MIDDLE_MOTOR_FRONT 5
-#define MIDDLE_MOTOR_REAR 9
-#define LIFT_ENGINE 6
-#define VAGINA_MOTOR_RIGHT 7
-#define VAGINA_MOTOR_LEFT 8
-#define PICK_ENGINE 6
+#define RIGHT_MOTOR 0
+#define LEFT_MOTOR 1
+
+#define MIDDLE_MOTOR_FRONT 2
+#define MIDDLE_MOTOR_REAR 3
+
+#define ENCODER_FIRST 1
+#define ENCODER_SECOND 2
+
+#define LIFT_ENGINE 4
+
+#define VAGINA_MOTOR_RIGHT 5
+#define VAGINA_MOTOR_LEFT 6
+#define PICK_ENGINE 7
+
 #endif
