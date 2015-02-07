@@ -1,5 +1,6 @@
 #include "Chassis.h"
 #include "../RobotMap.h"
+#include "../Commands/DriveOmni.h"
 
 Chassis::Chassis() : Subsystem("Chassis")
 {

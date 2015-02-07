@@ -8,7 +8,6 @@ class Chassis: public Subsystem
 {
 private:
 	RobotDrive *robotdrive;
-
 	Talon *mid, *left, *right;
 
 public:

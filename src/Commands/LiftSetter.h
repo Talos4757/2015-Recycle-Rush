@@ -1,13 +1,16 @@
-#ifndef DRIVEOMNI_H_
-#define DRIVEOMNI_H_
+#ifndef LIFT_SETTER_H_
+#define LIFT_SETTER_H_
 
 #include "../CommandBase.h"
 #include "SmartDashboard/SmartDashboard.h"
 
-class DriveOmni: public CommandBase
+class LiftSetter: public CommandBase
 {
+private:
+	float speed;
+
 public:
-	DriveOmni();
+	LiftSetter(float s);
 
 	virtual void Initialize();
 	virtual void Execute();
@@ -17,4 +20,4 @@ public:
 };
 
 
-#endif /* DRIVEOMNI_H_ */
+#endif /* LIFTSETTER_H_ */

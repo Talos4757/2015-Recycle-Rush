@@ -1,36 +1,31 @@
 #include "OI.h"
 #include "RobotMap.h"
-#include "Commands/PickerPos.h"
-#include "Commands/DriveRotate.h"
-#include "Commands/HeightSetter.h"
-#include "Commands/DriveArcade.h"
+#include "Commands/DriveOmni.h"
+#include "Commands/GripSetter.h"
+#include "Commands/LiftSetter.h"
 
 OI::OI()
 {
 	this->leftStick = new Joystick(LEFT_JOYSTICK);
 	this->rightStick = new Joystick(RIGHT_JOYSTICK);
-	this->RotateButton=new JoystickButton(rightStick,2);
-	ArcadeButton = new JoystickButton(rightStick,2);
 
 	this->LifterUp=new JoystickButton(rightStick,8);
 	this->LifterDown=new JoystickButton(rightStick,9);
 
-	this->Open=new JoystickButton(rightStick,2);
-	this->Close=new JoystickButton(rightStick,1);
-	RotateButton->WhileHeld(new DriveRotate());
+	this->OpenGrip = new JoystickButton(rightStick,2);
+	this->CloseGrip = new JoystickButton(rightStick,1);
 
-	LifterUp->WhileHeld(new HeightSetter(0.01));
-	LifterDown->WhileHeld(new HeightSetter(-0.01));
+	LifterUp->WhileHeld(new LiftSetter(0.01));
+	LifterDown->WhileHeld(new LiftSetter(-0.5f));
 
-	ArcadeButton->WhileHeld(new DriveArcade());
-	Open->WhileHeld(new PickerPos(1.0f));
-	Close->WhileHeld(new PickerPos(-1.0f));
+	OpenGrip->WhileHeld(new GripSetter());
+	CloseGrip->WhileHeld(new GripSetter());
 }
-Joystick *OI::getLeftStick()
+Joystick *OI::GetLeftStick()
 {
 	return this->leftStick;
 }
-Joystick *OI::getRightStick()
+Joystick *OI::GetRightStick()
 {
 	return this->rightStick;
 }

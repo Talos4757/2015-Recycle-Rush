@@ -9,16 +9,16 @@ private:
 	Joystick *leftStick, *rightStick;
 	const int LEFT_JOYSTICK = 0;
 	const int RIGHT_JOYSTICK = 1;
+
 public:
 	OI();
-	Joystick* getLeftStick();
-	Joystick* getRightStick();
-	JoystickButton* ArcadeButton;
-	JoystickButton* RotateButton;
+	Joystick* GetLeftStick();
+	Joystick* GetRightStick();
+
 	JoystickButton* LifterUp;
 	JoystickButton* LifterDown;
-	JoystickButton* Open;
-	JoystickButton* Close;
+	JoystickButton* OpenGrip;
+	JoystickButton* CloseGrip;
 };
 
 #endif
