@@ -1,8 +1,8 @@
 #include "GripSetter.h"
 
-GripSetter::GripSetter()
+GripSetter::GripSetter(float s)
 {
-	this->speed = 0.8;
+	this->speed = s;
 }
 
 void GripSetter::Initialize()
@@ -10,14 +10,13 @@ void GripSetter::Initialize()
 
 }
 
-void GripSetter::SetSpeed(float s)
-{
-	this->speed = s;
-}
 
 void GripSetter::Execute()
 {
-	gripper->GetGripperMotor()->SetSpeed(this->speed);
+
+
+		gripper->GetGripperMotor()->SetSpeed(this->speed);
+
 }
 
 bool GripSetter::IsFinished()

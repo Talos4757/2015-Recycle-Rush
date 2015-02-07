@@ -9,7 +9,7 @@ Gripper::Gripper() : Subsystem("Gripper")
 
 void Gripper::InitDefaultCommand()
 {
-	SetDefaultCommand(new GripSetter());
+	SetDefaultCommand(new GripSetter(0.0f));
 }
 
 Talon *Gripper::GetGripperMotor()

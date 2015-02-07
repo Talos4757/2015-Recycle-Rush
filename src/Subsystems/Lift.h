@@ -15,7 +15,7 @@ class Lift : public Subsystem
 {
 private:
 	Talon *LiftMotor;
-
+	Encoder *e;
 public:
 	Lift();
 	void InitDefaultCommand();

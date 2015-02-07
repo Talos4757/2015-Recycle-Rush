@@ -10,9 +10,8 @@ private:
 	float speed;
 
 public:
-	GripSetter();
+	GripSetter(float s);
 
-	virtual void SetSpeed(float s);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

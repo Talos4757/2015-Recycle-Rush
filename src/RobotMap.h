@@ -3,11 +3,11 @@
 
 #include "WPILib.h"
 
-#define CH_RIGHT_MOTOR 0
-#define CH_LEFT_MOTOR 1
-#define CH_MIDDLE_MOTOR 2
+#define CH_RIGHT_MOTOR 1
+#define CH_LEFT_MOTOR 2
+#define CH_MIDDLE_MOTOR 3
 
-#define LIFT_ENGINE 3
-#define GRIP_ENGINE 4
+#define LIFT_ENGINE 4
+#define GRIP_ENGINE 0
 
 #endif
