@@ -11,7 +11,8 @@ void DriveOmni::Initialize()
 
 void DriveOmni::Execute()
 {
-	chassis->GetRobotDrive()->ArcadeDrive(oi->GetRightStick());
+	chassis->GetRobotDrive()->TankDrive(oi->GetRightStick()->GetY(),oi->GetRightStick()->GetY());
+	chassis->GetMiddleMotor()->SetSpeed(oi->GetRightStick()->GetX());
 }
 
 bool DriveOmni::IsFinished()

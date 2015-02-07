@@ -20,3 +20,8 @@ RobotDrive *Chassis::GetRobotDrive()
 {
 	return robotdrive;
 }
+
+Talon* Chassis::GetMiddleMotor()
+{
+	return this->mid;
+}

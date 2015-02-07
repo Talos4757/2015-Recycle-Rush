@@ -15,6 +15,7 @@ public:
 	void InitDefaultCommand();
 
 	RobotDrive* GetRobotDrive();
+	Talon* GetMiddleMotor();
 };
 
 #endif

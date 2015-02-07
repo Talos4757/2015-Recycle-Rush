@@ -3,24 +3,29 @@
 #include "Commands/DriveOmni.h"
 #include "Commands/GripSetter.h"
 #include "Commands/LiftSetter.h"
+#include "Commands/DriveArcade.h"
 
 OI::OI()
 {
 	this->leftStick = new Joystick(LEFT_JOYSTICK);
 	this->rightStick = new Joystick(RIGHT_JOYSTICK);
 
-	this->LifterUp=new JoystickButton(rightStick,11);
-	this->LifterDown=new JoystickButton(rightStick,10);
+	this->ArcadeMode = new JoystickButton(rightStick,2);
 
-	this->OpenGrip = new JoystickButton(rightStick,8);
-	this->CloseGrip = new JoystickButton(rightStick,9);
+	this->LifterUp=new JoystickButton(leftStick,11);
+	this->LifterDown=new JoystickButton(leftStick,10);
 
+	this->OpenGrip = new JoystickButton(leftStick,8);
+	this->CloseGrip = new JoystickButton(leftStick,9);
+
+	ArcadeMode->WhenPressed(new DriveArcade());
 	LifterUp->WhileHeld(new LiftSetter(0.5f));
 	LifterDown->WhileHeld(new LiftSetter(-0.5f));
 	LifterUp->WhenReleased(new LiftSetter(0.0f));
 	LifterDown->WhenReleased(new LiftSetter(0.0f));
-	OpenGrip->WhileHeld(new GripSetter(0.45f));
-	CloseGrip->WhileHeld(new GripSetter(-0.45f));
+
+	OpenGrip->ToggleWhenPressed(new GripSetter(0.6f));
+	CloseGrip->ToggleWhenPressed(new GripSetter(-0.6f));
 }
 
 Joystick *OI::GetLeftStick()

@@ -19,6 +19,7 @@ public:
 	JoystickButton* LifterDown;
 	JoystickButton* OpenGrip;
 	JoystickButton* CloseGrip;
+	JoystickButton* ArcadeMode;
 };
 
 #endif
