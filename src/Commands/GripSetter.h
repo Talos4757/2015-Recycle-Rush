@@ -12,12 +12,12 @@ private:
 public:
 	GripSetter();
 
-	void SetSpeed(float s);
-	void Initialize();
-	void Execute();
-	bool IsFinished();
-	void End();
-	void Interrupted();
+	virtual void SetSpeed(float s);
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
 };
 
 
