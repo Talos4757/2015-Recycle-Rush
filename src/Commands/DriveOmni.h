@@ -1,18 +1,20 @@
-#ifndef DRIVE_OMNI_H
-#define DRIVE_OMNI_H
+#ifndef DRIVEOMNI_H_
+#define DRIVEOMNI_H_
 
-#include "../CommandBase.h"
-#include "WPILib.h"
+#include "../CommandBase.h";
+#include "SmartDashboard/SmartDashboard.h"
 
 class DriveOmni: public CommandBase
 {
 public:
 	DriveOmni();
-	void Initialize();
-	void Execute();
-	bool IsFinished();
-	void End();
-	void Interrupted();
+
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
 };
 
-#endif
+
+#endif /* DRIVEOMNI_H_ */
