@@ -5,6 +5,8 @@
 Gripper::Gripper() : Subsystem("Gripper")
 {
 	this->GripperMotor = new Talon(GRIP_ENGINE);
+	this->open=new DigitalInput(MICROSWITCH1);
+	this->close=new DigitalInput(MICROSWITCH2);
 }
 
 void Gripper::InitDefaultCommand()

@@ -11,8 +11,12 @@ void DriveOmni::Initialize()
 
 void DriveOmni::Execute()
 {
-	chassis->GetRobotDrive()->ArcadeDrive(oi->GetRightStick());
-	//chassis->GetMiddleMotor()->SetSpeed(oi->GetRightStick()->GetX());
+	SmartDashboard::PutNumber("First Length:",chassis->GetDor()->GetRangeMM()*10);
+	SmartDashboard::PutNumber("Second Length:",chassis->GetDor2()->GetRangeMM()*10);
+	float y=oi->GetRightStick()->GetY();
+	float x=oi->GetLeftStick()->GetX();
+	chassis->GetRobotDrive()->TankDrive(y,y,false);
+	chassis->GetMiddleMotor()->SetSpeed(x);
 }
 
 bool DriveOmni::IsFinished()

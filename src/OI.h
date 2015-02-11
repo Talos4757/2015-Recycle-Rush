@@ -15,11 +15,12 @@ public:
 	Joystick* GetLeftStick();
 	Joystick* GetRightStick();
 
-	JoystickButton* LifterUp;
-	JoystickButton* LifterDown;
+	//JoystickButton* LifterUp;
+	//JoystickButton* LifterDown;
 	JoystickButton* OpenGrip;
 	JoystickButton* CloseGrip;
 	JoystickButton* ArcadeMode;
+	JoystickButton *Fast;
 };
 
 #endif

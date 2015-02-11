@@ -11,21 +11,19 @@ OI::OI()
 	this->rightStick = new Joystick(RIGHT_JOYSTICK);
 
 	this->ArcadeMode = new JoystickButton(rightStick,2);
+	this->Fast=new JoystickButton(rightStick,1);
+	//this->LifterUp=new JoystickButton(leftStick,11);
+	//this->LifterDown=new JoystickButton(leftStick,10);
 
-	this->LifterUp=new JoystickButton(leftStick,11);
-	this->LifterDown=new JoystickButton(leftStick,10);
+	this->OpenGrip = new JoystickButton(leftStick,4);
+	this->CloseGrip = new JoystickButton(leftStick,5);
 
-	this->OpenGrip = new JoystickButton(leftStick,8);
-	this->CloseGrip = new JoystickButton(leftStick,9);
-
-	ArcadeMode->WhenPressed(new DriveArcade());
-	LifterUp->WhileHeld(new LiftSetter(0.5f));
-	LifterDown->WhileHeld(new LiftSetter(-0.5f));
-	LifterUp->WhenReleased(new LiftSetter(0.0f));
-	LifterDown->WhenReleased(new LiftSetter(0.0f));
-
-	OpenGrip->ToggleWhenPressed(new GripSetter(0.6f));
-	CloseGrip->ToggleWhenPressed(new GripSetter(-0.6f));
+	//ArcadeMode->WhenPressed(new DriveArcade());
+	//LifterUp->WhileHeld(new LiftSetter(0.5f));
+	//LifterDown->WhileHeld(new LiftSetter(-0.5f));
+	Fast->WhileHeld(new DriveOmni());
+	OpenGrip->WhileHeld(new GripSetter(0.6f));
+	CloseGrip->WhileHeld(new GripSetter(-0.6f));
 }
 
 Joystick *OI::GetLeftStick()
