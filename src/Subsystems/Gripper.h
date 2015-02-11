@@ -20,6 +20,7 @@ public:
 	Gripper();
 	void InitDefaultCommand();
 	Talon *GetGripperMotor();
+	DigitalInput *open, *close;
 };
 
 #endif /* GRIPPER_H_ */

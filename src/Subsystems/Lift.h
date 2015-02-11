@@ -16,10 +16,14 @@ class Lift : public Subsystem
 private:
 	Talon *LiftMotor;
 	Encoder *e;
+
 public:
 	Lift();
 	void InitDefaultCommand();
 	Talon *GetLiftMotor();
+	Encoder* GetEnc();
+	DigitalInput *UpLimit, *Bottom;
 };
+
 
 #endif /* LIFT_H_ */
