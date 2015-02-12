@@ -12,7 +12,7 @@ Lift::Lift() : Subsystem("Lift")
 
 void Lift::InitDefaultCommand()
 {
-	SetDefaultCommand(new LiftSetter());
+	SetDefaultCommand(new LiftSetter(0.0f));
 }
 
 Talon *Lift::GetLiftMotor()

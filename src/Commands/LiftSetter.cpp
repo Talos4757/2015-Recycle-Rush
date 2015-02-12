@@ -1,7 +1,8 @@
 #include "LiftSetter.h"
 #include <math.h>
-LiftSetter::LiftSetter()
+LiftSetter::LiftSetter(float s)
 {
+	this->speed = -s;
 	Requires(lift);
 }
 
@@ -11,9 +12,7 @@ void LiftSetter::Initialize()
 
 void LiftSetter::Execute()
 {
-	//SmartDashboard::PutNumber("height: ", lift->GetEnc()->Get()*2*5*M_PI);
-	//if((lift->UpLimit->Get()&&oi->GetLeftStick()->GetY()>0)||(lift->Bottom->Get()&&oi->GetLeftStick()->GetY()<0))
-		lift->GetLiftMotor()->SetSpeed(-oi->GetLeftStick()->GetY());
+	lift->GetLiftMotor()->SetSpeed(this->speed);
 }
 
 bool LiftSetter::IsFinished()

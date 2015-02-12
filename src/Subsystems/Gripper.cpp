@@ -9,26 +9,10 @@ Gripper::Gripper() : Subsystem("Chassis")
 
 void Gripper::InitDefaultCommand()
 {
-	SetDefaultCommand(new GripSetter());
+	SetDefaultCommand(new GripSetter(0.0f));
 }
 
 Talon* Gripper::GetGripperMotor()
 {
 	return this->GripperMotor;
 }
-/*
-Talon* Chassis::GetMiddleMotor()
-{
-	return this->mid;
-}*/
-/*Ultrasonic* Chassis::GetDor()
-{
-	return this->Dor;
-}
-Ultrasonic* Chassis::GetDor2()
-{
-	return this->Dor2;
-}
-*/
-
-

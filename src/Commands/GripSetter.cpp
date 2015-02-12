@@ -1,7 +1,8 @@
 #include "GripSetter.h"
 
-GripSetter::GripSetter()
+GripSetter::GripSetter(float s)
 {
+	this->speed  = -s;
 	Requires(gripper);
 
 }
@@ -11,14 +12,9 @@ void GripSetter::Initialize()
 
 }
 
-
 void GripSetter::Execute()
 {
-/*
-	if((!gripper->open->Get()&&this->speed>0)||(!gripper->close->Get()&&this->speed<0))
-		gripper->GetGripperMotor()->SetSpeed(this->speed);
-*/
-	gripper->GetGripperMotor()->SetSpeed(-oi->GetLeftStick()->GetX());
+	gripper->GetGripperMotor()->SetSpeed(this->speed);
 }
 
 bool GripSetter::IsFinished()
