@@ -1,10 +1,3 @@
-/*
- * Gripper.h
- *
- *  Created on: 7 αταψ 2015
- *      Author: User
- */
-
 #ifndef LIFT_H_
 #define LIFT_H_
 
@@ -15,14 +8,14 @@ class Lift : public Subsystem
 {
 private:
 	Talon *LiftMotor;
-	Encoder *e;
+	DigitalInput *UpLimit, *BottomLimit;
 
 public:
 	Lift();
 	void InitDefaultCommand();
 	Talon *GetLiftMotor();
-	Encoder* GetEnc();
-	DigitalInput *UpLimit, *Bottom;
+	bool IsTopmost();
+	bool IsDownmost();
 };
 
 

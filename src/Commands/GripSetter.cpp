@@ -4,17 +4,26 @@ GripSetter::GripSetter(float s)
 {
 	this->speed  = -s;
 	Requires(gripper);
-
 }
 
 void GripSetter::Initialize()
 {
-
 }
 
 void GripSetter::Execute()
 {
-	gripper->GetGripperMotor()->SetSpeed(this->speed);
+	if(
+		((this->speed > 0) && gripper->IsFullyOpened()) //closing while opened mostly is OK
+			||
+		((this->speed < 0) && gripper->IsFullyClosed()) //opposite situation here
+		)
+	{
+		gripper->GetGripperMotor()->SetSpeed(this->speed);
+	}
+	else
+	{
+		gripper->GetGripperMotor()->SetSpeed(0.0f);
+	}
 }
 
 bool GripSetter::IsFinished()

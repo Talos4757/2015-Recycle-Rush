@@ -5,9 +5,9 @@
 Lift::Lift() : Subsystem("Lift")
 {
 	this->LiftMotor = new Talon(LIFT_ENGINE);
-	this->e=new Encoder(1,2,true);
-//	this->UpLimit=new DigitalInput(UP);
-	//this->Bottom=new DigitalInput(DOWN);
+
+	this->UpLimit = new DigitalInput(LIFT_UP_LIMITER);
+	this->BottomLimit = new DigitalInput(LIFT_BOTTOM_LIMITER);
 }
 
 void Lift::InitDefaultCommand()
@@ -15,11 +15,17 @@ void Lift::InitDefaultCommand()
 	SetDefaultCommand(new LiftSetter(0.0f));
 }
 
-Talon *Lift::GetLiftMotor()
+Talon* Lift::GetLiftMotor()
 {
 	return this->LiftMotor;
 }
-Encoder* Lift::GetEnc()
+
+bool Lift::IsTopmost()
 {
-	return this->e;
+	return this->UpLimit->Get();
+}
+
+bool Lift::IsDownmost()
+{
+	return this->BottomLimit->Get();
 }
