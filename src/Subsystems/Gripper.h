@@ -1,3 +1,10 @@
+/*
+ * Gripper.h
+ *
+ *  Created on: 7 αταψ 2015
+ *      Author: User
+ */
+
 #ifndef GRIPPER_H_
 #define GRIPPER_H_
 
@@ -12,7 +19,7 @@ private:
 public:
 	Gripper();
 	void InitDefaultCommand();
-	Talon *GetGripperMotor();
+	Talon* GetGripperMotor();
 	DigitalInput *open, *close;
 };
 

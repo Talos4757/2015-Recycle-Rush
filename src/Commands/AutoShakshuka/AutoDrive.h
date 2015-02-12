@@ -7,7 +7,7 @@
 class AutoDrive: public CommandBase
 {
 public:
-	AutoDrive(int step);
+	AutoDrive(float step);
 
 	virtual void Initialize();
 	virtual void Execute();
@@ -16,7 +16,7 @@ public:
 	virtual void Interrupted();
 
 private:
-	int step;
+	float step;
 };
 
 

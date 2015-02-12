@@ -1,14 +1,14 @@
 #include <Commands/AutoShakshuka/AutoGripSetter.h>
 
-AutoGripSetter::AutoGripSetter(float s, int st)
+AutoGripSetter::AutoGripSetter(float s, float timeout)
 {
 	this->speed = s;
-	this->step = st;
+	this->step = timeout;
 }
 
 void AutoGripSetter::Initialize()
 {
-
+	SetTimeout(this->step);
 }
 
 

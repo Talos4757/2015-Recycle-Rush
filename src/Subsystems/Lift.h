@@ -15,13 +15,13 @@ class Lift : public Subsystem
 {
 private:
 	Talon *LiftMotor;
-	//Encoder *e;
+	Encoder *e;
 
 public:
 	Lift();
 	void InitDefaultCommand();
 	Talon *GetLiftMotor();
-	//Encoder* GetEnc();
+	Encoder* GetEnc();
 	DigitalInput *UpLimit, *Bottom;
 };
 

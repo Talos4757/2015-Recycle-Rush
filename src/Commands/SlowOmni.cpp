@@ -22,7 +22,7 @@ void SlowOmni::Execute()
 	float y=(oi->GetRightStick()->GetY())/2;
 	float x=(oi->GetLeftStick()->GetX())/2;
 	chassis->GetRobotDrive()->TankDrive(y,y,false);
-	chassis->GetMiddleMotor()->SetSpeed(x);
+	//chassis->GetMiddleMotor()->SetSpeed(x);
 }
 
 bool SlowOmni::IsFinished()

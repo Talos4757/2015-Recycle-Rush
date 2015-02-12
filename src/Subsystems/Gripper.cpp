@@ -2,19 +2,33 @@
 #include "../RobotMap.h"
 #include "../Commands/GripSetter.h"
 
-Gripper::Gripper() : Subsystem("Gripper")
+Gripper::Gripper() : Subsystem("Chassis")
 {
 	this->GripperMotor = new Talon(GRIP_ENGINE);
-	//this->open=new DigitalInput(MICROSWITCH1);
-	//this->close=new DigitalInput(MICROSWITCH2);
 }
 
 void Gripper::InitDefaultCommand()
 {
-	SetDefaultCommand(new GripSetter(0));
+	SetDefaultCommand(new GripSetter());
 }
 
-Talon *Gripper::GetGripperMotor()
+Talon* Gripper::GetGripperMotor()
 {
 	return this->GripperMotor;
 }
+/*
+Talon* Chassis::GetMiddleMotor()
+{
+	return this->mid;
+}*/
+/*Ultrasonic* Chassis::GetDor()
+{
+	return this->Dor;
+}
+Ultrasonic* Chassis::GetDor2()
+{
+	return this->Dor2;
+}
+*/
+
+

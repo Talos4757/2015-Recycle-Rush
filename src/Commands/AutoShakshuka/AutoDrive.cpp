@@ -1,6 +1,6 @@
 #include "AutoDrive.h"
 
-AutoDrive::AutoDrive(int s)
+AutoDrive::AutoDrive(float s)
 {
 	Requires(chassis);
 	this->step = s;
@@ -8,11 +8,12 @@ AutoDrive::AutoDrive(int s)
 
 void AutoDrive::Initialize()
 {
+	SetTimeout(this->step);
 }
 
 void AutoDrive::Execute()
 {
-	if(this->step == 0)
+	//if(this->step == 0)
 		chassis->GetRobotDrive()->ArcadeDrive(oi->GetRightStick());
 }
 

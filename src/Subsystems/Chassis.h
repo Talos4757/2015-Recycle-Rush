@@ -16,8 +16,8 @@ public:
 
 	RobotDrive* GetRobotDrive();
 	Talon* GetMiddleMotor();
-	//Ultrasonic *GetDor();
-	//Ultrasonic *GetDor2();
+	/*Ultrasonic *GetDor();
+	Ultrasonic *GetDor2();*/
 };
 
 #endif

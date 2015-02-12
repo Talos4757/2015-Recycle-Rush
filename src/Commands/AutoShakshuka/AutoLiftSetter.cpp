@@ -1,6 +1,6 @@
 #include <Commands/AutoShakshuka/AutoLiftSetter.h>
 
-AutoLiftSetter::AutoLiftSetter(float s, int st)
+AutoLiftSetter::AutoLiftSetter(float s, float st)
 {
 	Requires(lift);
 	this->speed = s;
@@ -9,6 +9,7 @@ AutoLiftSetter::AutoLiftSetter(float s, int st)
 
 void AutoLiftSetter::Initialize()
 {
+	SetTimeout(this->step);
 }
 
 void AutoLiftSetter::Execute()

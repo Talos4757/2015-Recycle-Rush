@@ -8,9 +8,9 @@ class AutoLiftSetter: public CommandBase
 {
 private:
 	float speed;
-	int step;
+	float step;
 public:
-	AutoLiftSetter(float s, int st);
+	AutoLiftSetter(float s, float st);
 
 	virtual void Initialize();
 	virtual void Execute();

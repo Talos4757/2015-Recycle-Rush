@@ -7,10 +7,10 @@
 class GripSetter: public CommandBase
 {
 private:
-	float speed;
+
 
 public:
-	GripSetter(float s);
+	GripSetter();
 
 	virtual void Initialize();
 	virtual void Execute();

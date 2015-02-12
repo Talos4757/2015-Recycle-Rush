@@ -8,10 +8,10 @@ class AutoGripSetter: public CommandBase
 {
 private:
 	float speed;
-	int step;
+	float step;
 
 public:
-	AutoGripSetter(float s, int st);
+	AutoGripSetter(float s, float st);
 
 	virtual void Initialize();
 	virtual void Execute();

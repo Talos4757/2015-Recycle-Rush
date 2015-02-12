@@ -1,7 +1,7 @@
+#include <Commands/AutonCommand.h>
 #include "WPILib.h"
 #include "Commands/Command.h"
 #include "CommandBase.h"
-
 class Robot: public IterativeRobot
 {
 private:
@@ -11,7 +11,7 @@ private:
 	void RobotInit()
 	{
 		CommandBase::Init();
-		autonomousCommand = NULL;
+		autonomousCommand = new AutonCommand();
 		lw = LiveWindow::GetInstance();
 	}
 	
@@ -23,7 +23,6 @@ private:
 
 	void AutonomousInit()
 	{
-
 		if (autonomousCommand != NULL)
 			autonomousCommand->Start();
 	}

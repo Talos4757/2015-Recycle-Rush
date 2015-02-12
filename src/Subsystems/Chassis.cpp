@@ -1,6 +1,6 @@
 #include "Chassis.h"
 #include "../RobotMap.h"
-#include "../Commands/DriveArcade.h"
+#include "../Commands/DriveOmni.h"
 
 Chassis::Chassis() : Subsystem("Chassis")
 {
@@ -9,16 +9,17 @@ Chassis::Chassis() : Subsystem("Chassis")
 	this->mid = new Talon(CH_MIDDLE_MOTOR);
 	this->robotdrive = new RobotDrive(right,left);
 
+
 	//this->Dor=new Ultrasonic(SONAR,SONAR2);
 	//this->Dor2=new Ultrasonic(SONAR3,SONAR4);
 }
 
 void Chassis::InitDefaultCommand()
 {
-	SetDefaultCommand(new DriveArcade());
+	SetDefaultCommand(new DriveOmni());
 }
 
-RobotDrive *Chassis::GetRobotDrive()
+RobotDrive* Chassis::GetRobotDrive()
 {
 	return robotdrive;
 }
@@ -34,4 +35,5 @@ Talon* Chassis::GetMiddleMotor()
 Ultrasonic* Chassis::GetDor2()
 {
 	return this->Dor2;
-}*/
+}
+*/
