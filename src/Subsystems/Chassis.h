@@ -9,15 +9,15 @@ class Chassis: public Subsystem
 private:
 	RobotDrive *robotdrive;
 	Talon *mid, *left, *right;
-	Ultrasonic *Dor,*Dor2;
+	//Ultrasonic *Dor,*Dor2;
 public:
 	Chassis();
 	void InitDefaultCommand();
 
 	RobotDrive* GetRobotDrive();
 	Talon* GetMiddleMotor();
-	Ultrasonic *GetDor();
-	Ultrasonic *GetDor2();
+	//Ultrasonic *GetDor();
+	//Ultrasonic *GetDor2();
 };
 
 #endif

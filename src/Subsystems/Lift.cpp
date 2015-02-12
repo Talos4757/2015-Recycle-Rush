@@ -5,7 +5,7 @@
 Lift::Lift() : Subsystem("Lift")
 {
 	this->LiftMotor = new Talon(LIFT_ENGINE);
-	this->e=new Encoder(1,2,true);
+	//this->e=new Encoder(1,2,true);
 	this->UpLimit=new DigitalInput(UP);
 	this->Bottom=new DigitalInput(DOWN);
 }
@@ -19,7 +19,7 @@ Talon *Lift::GetLiftMotor()
 {
 	return this->LiftMotor;
 }
-Encoder* Lift::GetEnc()
+/*Encoder* Lift::GetEnc()
 {
 	return this->e;
-}
+}*/

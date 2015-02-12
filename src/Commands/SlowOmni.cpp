@@ -17,8 +17,8 @@ void SlowOmni::Initialize()
 
 void SlowOmni::Execute()
 {
-	SmartDashboard::PutNumber("First Length:",chassis->GetDor()->GetRangeMM()*10);
-	SmartDashboard::PutNumber("Second Length:",chassis->GetDor2()->GetRangeMM()*10);
+	//SmartDashboard::PutNumber("First Length:",chassis->GetDor()->GetRangeMM()*10);
+	//SmartDashboard::PutNumber("Second Length:",chassis->GetDor2()->GetRangeMM()*10);
 	float y=(oi->GetRightStick()->GetY())/2;
 	float x=(oi->GetLeftStick()->GetX())/2;
 	chassis->GetRobotDrive()->TankDrive(y,y,false);

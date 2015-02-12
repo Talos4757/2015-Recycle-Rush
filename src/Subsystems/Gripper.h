@@ -1,10 +1,3 @@
-/*
- * Gripper.h
- *
- *  Created on: 7 αταψ 2015
- *      Author: User
- */
-
 #ifndef GRIPPER_H_
 #define GRIPPER_H_
 
