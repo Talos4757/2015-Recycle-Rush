@@ -11,8 +11,8 @@ void DriveOmni::Initialize()
 
 void DriveOmni::Execute()
 {
-	float y = oi->GetRightStick()->GetY();
-	float x = oi->GetLeftStick()->GetX();
+	float y = oi->GetDriverStick()->GetY();
+	float x = oi->GetDriverStick()->GetX();
 	chassis->GetRobotDrive()->TankDrive(y,y,false);
 	chassis->GetMiddleMotor()->SetSpeed(x);
 }

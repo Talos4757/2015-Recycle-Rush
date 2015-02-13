@@ -14,7 +14,7 @@ void AutoDrive::Initialize()
 void AutoDrive::Execute()
 {
 	//if(this->step == 0)
-		chassis->GetRobotDrive()->ArcadeDrive(oi->GetRightStick());
+		chassis->GetRobotDrive()->ArcadeDrive(oi->GetDriverStick());
 }
 
 bool AutoDrive::IsFinished()

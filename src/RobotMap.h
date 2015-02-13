@@ -1,7 +1,7 @@
 #ifndef ROBOTMAP_H
 #define ROBOTMAP_H
 
-#include "WPILib.h"
+#include "JoystickMap.h"
 
 #define CH_RIGHT_MOTOR 2
 #define CH_LEFT_MOTOR 0

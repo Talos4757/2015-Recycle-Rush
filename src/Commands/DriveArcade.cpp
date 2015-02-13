@@ -11,9 +11,7 @@ void DriveArcade::Initialize()
 
 void DriveArcade::Execute()
 {
-	//SmartDashboard::PutNumber("First Length:",chassis->GetDor()->GetRangeMM()*10);
-	//SmartDashboard::PutNumber("Second Length:",chassis->GetDor2()->GetRangeMM()*10);
-	chassis->GetRobotDrive()->ArcadeDrive(oi->GetRightStick());
+	chassis->GetRobotDrive()->ArcadeDrive(oi->GetDriverStick());
 }
 
 bool DriveArcade::IsFinished()

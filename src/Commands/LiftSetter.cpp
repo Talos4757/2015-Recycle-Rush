@@ -2,7 +2,6 @@
 
 LiftSetter::LiftSetter()
 {
-
 	Requires(lift);
 }
 
@@ -19,12 +18,12 @@ void LiftSetter::Execute()
 	}
 
 	if(
-			(oi->GetLeftStick()->GetY() < 0 && !lift->IsTopmost()) //lowering the lift while topmost is OK
+			(oi->GetLifterStick()->GetY() < 0 && !lift->IsTopmost()) //lowering the lift while topmost is OK
 			||
-			(oi->GetLeftStick()->GetY() > 0 && !lift->IsDownmost()) //opposite situation here
+			(oi->GetLifterStick()->GetY() > 0 && !lift->IsDownmost()) //opposite situation here
 	)
 	{
-		lift->GetLiftMotor()->SetSpeed(-oi->GetLeftStick()->GetY());
+		lift->GetLiftMotor()->SetSpeed(-oi->GetLifterStick()->GetY());
 	}
 	else
 	{

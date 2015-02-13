@@ -31,9 +31,9 @@ float DriveOmni3D::LimitMiddle(float x)
 
 void DriveOmni3D::Execute()
 {
-	float y = oi->GetRightStick()->GetY();
-	float x = LimitMiddle(oi->GetRightStick()->GetX());
-	float z = oi->GetRightStick()->GetTwist();
+	float y = oi->GetDriverStick()->GetY();
+	float x = LimitMiddle(oi->GetDriverStick()->GetX());
+	float z = oi->GetDriverStick()->GetTwist();
 
 	if(z > -0.1 && z < 0.1)
 	{
@@ -43,7 +43,7 @@ void DriveOmni3D::Execute()
 	}
 	else
 	{
-		//chassis->GetRobotDrive()->ArcadeDrive(oi->GetRightStick(),Y_CHANNEL,oi->GetRightStick(),Z_CHANNEL);
+		//chassis->GetRobotDrive()->ArcadeDrive(oi->GetDriverStick(),Y_CHANNEL,oi->GetDriverStick(),Z_CHANNEL);
 		chassis->GetRobotDrive()->TankDrive(z,-z,false);
 	}
 }

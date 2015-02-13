@@ -6,8 +6,6 @@
 
 class LiftSetter: public CommandBase
 {
-private:
-	float speed;
 public:
 	LiftSetter();
 
