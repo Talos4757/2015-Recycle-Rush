@@ -9,7 +9,7 @@ class LiftSetter: public CommandBase
 private:
 	float speed;
 public:
-	LiftSetter(float s);
+	LiftSetter();
 
 	virtual void Initialize();
 	virtual void Execute();

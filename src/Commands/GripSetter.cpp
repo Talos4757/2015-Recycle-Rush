@@ -1,9 +1,9 @@
 #include "GripSetter.h"
 
-GripSetter::GripSetter(float s)
+GripSetter::GripSetter()
 {
-	this->speed  = -s;
 	Requires(gripper);
+
 }
 
 void GripSetter::Initialize()
@@ -13,12 +13,12 @@ void GripSetter::Initialize()
 void GripSetter::Execute()
 {
 	if(
-		((this->speed > 0) && gripper->IsFullyOpened()) //closing while opened mostly is OK
+		((oi->GetLeftStick()->GetX() > 0.1f) && !gripper->IsFullyClosed()) //closing while opened mostly is OK
 			||
-		((this->speed < 0) && gripper->IsFullyClosed()) //opposite situation here
+		((oi->GetLeftStick()->GetX() < -0.1f) && !gripper->IsFullyOpened()) //opposite situation here
 		)
 	{
-		gripper->GetGripperMotor()->SetSpeed(this->speed);
+		gripper->GetGripperMotor()->SetSpeed(oi->GetLeftStick()->GetX());
 	}
 	else
 	{

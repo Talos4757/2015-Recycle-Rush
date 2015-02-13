@@ -9,13 +9,15 @@ class Lift : public Subsystem
 private:
 	Talon *LiftMotor;
 	DigitalInput *UpLimit, *BottomLimit;
-
+	Encoder *LiftEncoder;
 public:
 	Lift();
 	void InitDefaultCommand();
-	Talon *GetLiftMotor();
 	bool IsTopmost();
 	bool IsDownmost();
+	float GetHeight();
+	Talon *GetLiftMotor();
+	Encoder *GetLiftEncoder();
 };
 
 

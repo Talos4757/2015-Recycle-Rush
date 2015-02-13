@@ -1,24 +1,28 @@
 #include "LiftSetter.h"
 
-LiftSetter::LiftSetter(float s)
+LiftSetter::LiftSetter()
 {
-	this->speed = -s;
+
 	Requires(lift);
 }
 
 void LiftSetter::Initialize()
 {
+
 }
 
 void LiftSetter::Execute()
 {
+	if(lift->IsDownmost())
+		lift->GetLiftEncoder()->Reset();
+
 	if(
-			((this->speed < 0) && lift->IsTopmost()) //lowering the lift while topmost is OK
+			(oi->GetLeftStick()->GetY() > 0 && !lift->IsTopmost()) //lowering the lift while topmost is OK
 				||
-			((this->speed > 0) && lift->IsDownmost()) //opposite situation here
+			(oi->GetLeftStick()->GetY() < 0 && !lift->IsDownmost()) //opposite situation here
 		)
 	{
-		lift->GetLiftMotor()->SetSpeed(this->speed);
+		lift->GetLiftMotor()->SetSpeed(-oi->GetLeftStick()->GetY());
 	}
 	else
 	{
