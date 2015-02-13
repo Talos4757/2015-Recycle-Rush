@@ -6,6 +6,8 @@
 
 class DriveOmni3D: public CommandBase
 {
+private:
+	float LimitMiddle(float x);
 public:
 	DriveOmni3D();
 

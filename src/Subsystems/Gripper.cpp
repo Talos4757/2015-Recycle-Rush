@@ -22,10 +22,10 @@ Talon* Gripper::GetGripperMotor()
 
 bool Gripper::IsFullyOpened()
 {
-	return this->open->Get();
+	return !this->open->Get();
 }
 
 bool Gripper::IsFullyClosed()
 {
-	return this->close->Get();
+	return !this->close->Get();
 }

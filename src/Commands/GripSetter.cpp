@@ -3,7 +3,6 @@
 GripSetter::GripSetter()
 {
 	Requires(gripper);
-
 }
 
 void GripSetter::Initialize()

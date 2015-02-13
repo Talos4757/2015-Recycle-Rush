@@ -6,9 +6,6 @@
 
 class GripSetter: public CommandBase
 {
-private:
-	float speed;
-
 public:
 	GripSetter();
 

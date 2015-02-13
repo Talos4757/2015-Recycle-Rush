@@ -24,12 +24,12 @@ Talon* Lift::GetLiftMotor()
 
 bool Lift::IsTopmost()
 {
-	return this->UpLimit->Get();
+	return !this->UpLimit->Get();
 }
 
 bool Lift::IsDownmost()
 {
-	return this->BottomLimit->Get();
+	return !this->BottomLimit->Get();
 }
 
 float Lift::GetHeight()

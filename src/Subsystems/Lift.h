@@ -20,5 +20,4 @@ public:
 	Encoder *GetLiftEncoder();
 };
 
-
 #endif /* LIFT_H_ */
