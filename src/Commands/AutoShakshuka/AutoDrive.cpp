@@ -14,12 +14,12 @@ void AutoDrive::Initialize()
 void AutoDrive::Execute()
 {
 	//if(this->step == 0)
-		chassis->GetRobotDrive()->ArcadeDrive(oi->GetDriverStick());
+		chassis->GetRobotDrive()->TankDrive(1.0f,-1.0f,false);
 }
 
 bool AutoDrive::IsFinished()
 {
-	return false;
+	return IsTimedOut();
 }
 
 void AutoDrive::End()

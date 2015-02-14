@@ -16,14 +16,16 @@ void LiftSetter::Execute()
 	{
 		lift->GetLiftEncoder()->Reset();
 	}
-
+	SmartDashboard::PutBoolean("open",lift->IsTopmost());
+	SmartDashboard::PutBoolean("close",lift->IsDownmost());
+	SmartDashboard::PutNumber("speed:",oi->GetLifterStick()->GetY());
 	if(
-			(oi->GetLifterStick()->GetY() < 0 && !lift->IsTopmost()) //lowering the lift while topmost is OK
+			(oi->GetLifterStick()->GetY() < -0.15 && !lift->IsTopmost()) //lowering the lift while topmost is OK
 			||
-			(oi->GetLifterStick()->GetY() > 0 && !lift->IsDownmost()) //opposite situation here
+			(oi->GetLifterStick()->GetY() > 0.15 && !lift->IsDownmost()) //opposite situation here
 	)
 	{
-		lift->GetLiftMotor()->SetSpeed(-oi->GetLifterStick()->GetY());
+		lift->GetLiftMotor()->SetSpeed(oi->GetLifterStick()->GetY());
 	}
 	else
 	{

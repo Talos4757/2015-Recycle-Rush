@@ -1,5 +1,5 @@
 #include "DriveOmni3D.h"
-
+#include <math.h>
 #define X_CHANNEL 0
 #define Y_CHANNEL 1
 #define Z_CHANNEL 2
@@ -16,17 +16,7 @@ void DriveOmni3D::Initialize()
 
 float DriveOmni3D::LimitMiddle(float x)
 {
-	if(x > MIDDLE_LIMIT)
-	{
-		return MIDDLE_LIMIT;
-	}
-
-	if(x < -MIDDLE_LIMIT)
-	{
-		return -MIDDLE_LIMIT;
-	}
-
-	return x;
+	return (x*x*x);
 }
 
 void DriveOmni3D::Execute()
@@ -43,7 +33,9 @@ void DriveOmni3D::Execute()
 	}
 	else
 	{
-		chassis->GetRobotDrive()->ArcadeDrive(oi->GetDriverStick(),Y_CHANNEL,oi->GetDriverStick(),Z_CHANNEL);
+		chassis->GetRobotDrive()->ArcadeDrive(oi->GetDriverStick()->GetRawAxis(Y_CHANNEL),-oi->GetDriverStick()->GetRawAxis(Z_CHANNEL));
+		chassis->GetMiddleMotor()->SetSpeed(0);
+		//chassis->GetRobotDrive()->ArcadeDrive(oi->GetDriverStick(),Y_CHANNEL,oi->GetDriverStick(),Z_CHANNEL);
 		//chassis->GetRobotDrive()->TankDrive(z,-z,false);
 	}
 }

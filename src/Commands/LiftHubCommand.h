@@ -2,14 +2,18 @@
 #define LiftHubCommand_H
 
 #include "Commands/CommandGroup.h"
-#include "UndropLift.h"
-#include "DropLift.h"
+#include "../CommandBase.h"
 #include "WPILib.h"
 
-class LiftHubCommand: public CommandGroup
+class LiftHubCommand: public CommandBase
 {
 public:
 	LiftHubCommand();
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
 };
 
 #endif

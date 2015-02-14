@@ -3,11 +3,16 @@
 
 #include "Commands/CommandGroup.h"
 #include "WPILib.h"
-
-class GripperHubCommand: public CommandGroup
+#include "../CommandBase.h"
+class GripperHubCommand: public CommandBase
 {
 public:
 	GripperHubCommand();
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
 };
 
 #endif
