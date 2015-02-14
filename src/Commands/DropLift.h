@@ -1,5 +1,5 @@
-#ifndef DropLift_H
-#define DropLift_H
+#ifndef DROP_LIFT_H_
+#define DROP_LIFT_H_
 
 #include "../CommandBase.h"
 #include "WPILib.h"

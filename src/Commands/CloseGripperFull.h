@@ -1,14 +1,13 @@
-#ifndef LiftHubCommand_H
-#define LiftHubCommand_H
+#ifndef CLOSE_GRIPPER_FULL_H_
+#define CLOSE_GRIPPER_FULL_H_
 
 #include "Commands/CommandGroup.h"
-#include "../CommandBase.h"
 #include "WPILib.h"
-
-class LiftHubCommand: public CommandBase
+#include "../CommandBase.h"
+class CloseGripperFull: public CommandBase
 {
 public:
-	LiftHubCommand();
+	CloseGripperFull();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

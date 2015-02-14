@@ -23,7 +23,7 @@ void SlowOmni::Execute()
 	float x = oi->GetDriverStick()->GetX()/2;
 	float z = oi->GetDriverStick()->GetTwist();
 
-	if(oi->GetDriverStick()->GetTwist() > -0.1 && oi->GetDriverStick()->GetTwist() < 0.1)
+	if(z && z < 0.1)
 	{
 		//This means that the cartesian drive is taking place (no Z axis)
 		chassis->GetRobotDrive()->TankDrive(y,y,true);

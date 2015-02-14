@@ -1,8 +1,9 @@
 #include "AutoDown.h"
-#include "GripperHubCommand.h"
-#include "LiftHubCommand.h"
+#include "CloseGripperFull.h"
+#include "DropLift.h"
+
 AutoDown::AutoDown()
 {
-	AddSequential(new GripperHubCommand);
-	AddSequential(new LiftHubCommand);
+	AddSequential(new CloseGripperFull);
+	AddSequential(new DropLift);
 }

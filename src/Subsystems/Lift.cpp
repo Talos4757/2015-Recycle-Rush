@@ -10,6 +10,7 @@ Lift::Lift() : Subsystem("Lift")
 	this->BottomLimit = new DigitalInput(LIFT_BOTTOM_LIMITER);
 
 	this->LiftEncoder->Reset();
+	this->LiftEncoder->SetDistancePerPulse(2 * M_PI * RADIUS);
 }
 
 void Lift::InitDefaultCommand()
@@ -34,7 +35,12 @@ bool Lift::IsDownmost()
 
 float Lift::GetHeight()
 {
-	return 0;
+	if(this->IsDownmost())
+	{
+		this->LiftEncoder->Reset();
+	}
+
+	return this->LiftEncoder->GetDistance();
 }
 
 Encoder *Lift::GetLiftEncoder()

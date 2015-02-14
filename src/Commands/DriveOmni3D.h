@@ -1,5 +1,5 @@
-#ifndef DRIVEOMNI3D_H_
-#define DRIVEOMNI3D_H_
+#ifndef DRIVEOMNI3D_H
+#define DRIVEOMNI3D_H
 
 #include "../CommandBase.h"
 #include "SmartDashboard/SmartDashboard.h"

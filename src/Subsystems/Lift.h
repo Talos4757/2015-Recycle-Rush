@@ -3,6 +3,9 @@
 
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
+#include <math.h>
+
+#define RADIUS 3 //Centimeters
 
 class Lift : public Subsystem
 {
