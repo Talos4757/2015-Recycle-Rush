@@ -7,7 +7,7 @@
 class Lift : public Subsystem
 {
 private:
-	Talon *LiftMotor;
+	Victor *LiftMotor;
 	DigitalInput *UpLimit, *BottomLimit;
 	Encoder *LiftEncoder;
 public:
@@ -16,7 +16,7 @@ public:
 	bool IsTopmost();
 	bool IsDownmost();
 	float GetHeight();
-	Talon *GetLiftMotor();
+	Victor *GetLiftMotor();
 	Encoder *GetLiftEncoder();
 };
 

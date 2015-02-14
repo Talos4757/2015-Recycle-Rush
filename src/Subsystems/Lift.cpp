@@ -4,7 +4,7 @@
 
 Lift::Lift() : Subsystem("Lift")
 {
-	this->LiftMotor = new Talon(LIFT_ENGINE);
+	this->LiftMotor = new Victor(LIFT_ENGINE);
 	this->LiftEncoder = new Encoder(LIFT_ENCODER_ONE,LIFT_ENCODER_TWO);
 	this->UpLimit = new DigitalInput(LIFT_UP_LIMITER);
 	this->BottomLimit = new DigitalInput(LIFT_BOTTOM_LIMITER);
@@ -17,7 +17,7 @@ void Lift::InitDefaultCommand()
 	SetDefaultCommand(new LiftSetter());
 }
 
-Talon* Lift::GetLiftMotor()
+Victor* Lift::GetLiftMotor()
 {
 	return this->LiftMotor;
 }

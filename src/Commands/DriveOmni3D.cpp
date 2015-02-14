@@ -43,8 +43,8 @@ void DriveOmni3D::Execute()
 	}
 	else
 	{
-		//chassis->GetRobotDrive()->ArcadeDrive(oi->GetDriverStick(),Y_CHANNEL,oi->GetDriverStick(),Z_CHANNEL);
-		chassis->GetRobotDrive()->TankDrive(z,-z,false);
+		chassis->GetRobotDrive()->ArcadeDrive(oi->GetDriverStick(),Y_CHANNEL,oi->GetDriverStick(),Z_CHANNEL);
+		//chassis->GetRobotDrive()->TankDrive(z,-z,false);
 	}
 }
 

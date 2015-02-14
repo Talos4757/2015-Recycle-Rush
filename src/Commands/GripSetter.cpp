@@ -12,12 +12,12 @@ void GripSetter::Initialize()
 void GripSetter::Execute()
 {
 	if(
-		((oi->GetLifterStick()->GetX() < 0) && !gripper->IsFullyClosed()) //closing while opened mostly is OK
+		((-oi->GetLifterStick()->GetX() > 0.1) && !gripper->IsFullyClosed()) //closing while opened mostly is OK
 			||
-		((oi->GetLifterStick()->GetX() > 0) && !gripper->IsFullyOpened()) //opposite situation here
+		((-oi->GetLifterStick()->GetX() < -0.1) && !gripper->IsFullyOpened()) //opposite situation here
 		)
 	{
-		gripper->GetGripperMotor()->SetSpeed(oi->GetLifterStick()->GetX());
+		gripper->GetGripperMotor()->SetSpeed(-oi->GetLifterStick()->GetX());
 	}
 	else
 	{
