@@ -1,4 +1,4 @@
-#include "Commands/SlowOmni.h"
+#include "Commands/DriveOmni3D.h"
 #include "Chassis.h"
 #include "../RobotMap.h"
 
@@ -12,7 +12,7 @@ Chassis::Chassis() : Subsystem("Chassis")
 
 void Chassis::InitDefaultCommand()
 {
-	SetDefaultCommand(new SlowOmni());
+	SetDefaultCommand(new DriveOmni3D());
 }
 
 RobotDrive* Chassis::GetRobotDrive()

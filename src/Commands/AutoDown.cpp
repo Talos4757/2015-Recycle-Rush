@@ -4,6 +4,6 @@
 
 AutoDown::AutoDown()
 {
-	AddSequential(new CloseGripperFull);
-	AddSequential(new DropLift);
+	AddSequential(new CloseGripperFull());
+	AddSequential(new DropLift());
 }
