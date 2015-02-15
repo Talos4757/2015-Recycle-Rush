@@ -1,9 +1,12 @@
 #include "DriveOmni3D.h"
+#include "../Helper.h"
 #include <math.h>
 #define X_CHANNEL 0
 #define Y_CHANNEL 1
 #define Z_CHANNEL 2
 #define MIDDLE_LIMIT 0.5
+
+#define ZDEADZONE 0.25f
 
 DriveOmni3D::DriveOmni3D()
 {
@@ -25,7 +28,7 @@ void DriveOmni3D::Execute()
 	float x = LimitMiddle(oi->GetDriverStick()->GetX());
 	float z = oi->GetDriverStick()->GetTwist();
 
-	if(z > -0.1 && z < 0.1)
+	if(z > -ZDEADZONE && z < ZDEADZONE)
 	{
 		//This means that the cartesian drive is taking place (no Z axis)
 		chassis->GetRobotDrive()->TankDrive(y,y,false);
@@ -33,7 +36,11 @@ void DriveOmni3D::Execute()
 	}
 	else
 	{
-		chassis->GetRobotDrive()->ArcadeDrive(oi->GetDriverStick()->GetRawAxis(Y_CHANNEL),-oi->GetDriverStick()->GetRawAxis(Z_CHANNEL));
+		if(z<0)
+			z = Helper::ReMap(ValueRange(-ZDEADZONE,-1),ValueRange(0,-1),z);
+		else
+			z = Helper::ReMap(ValueRange(ZDEADZONE,1),ValueRange(0,1),z);
+		chassis->GetRobotDrive()->ArcadeDrive(y,-oi->GetDriverStick()->GetRawAxis(Z_CHANNEL));
 		chassis->GetMiddleMotor()->SetSpeed(0);
 		//chassis->GetRobotDrive()->ArcadeDrive(oi->GetDriverStick(),Y_CHANNEL,oi->GetDriverStick(),Z_CHANNEL);
 		//chassis->GetRobotDrive()->TankDrive(z,-z,false);

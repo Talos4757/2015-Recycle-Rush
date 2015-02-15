@@ -3,9 +3,9 @@
 
 #include "JoystickMap.h"
 
-#define CH_RIGHT_MOTOR 2
-#define CH_LEFT_MOTOR 0
-#define CH_MIDDLE_MOTOR 5
+#define CH_RIGHT_MOTOR 0
+#define CH_LEFT_MOTOR 5
+#define CH_MIDDLE_MOTOR 4
 
 #define LIFT_ENGINE 3
 #define GRIP_ENGINE 1
