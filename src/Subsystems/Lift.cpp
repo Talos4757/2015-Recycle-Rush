@@ -5,12 +5,12 @@
 Lift::Lift() : Subsystem("Lift")
 {
 	this->LiftMotor = new Victor(LIFT_ENGINE);
-	this->LiftEncoder = new Encoder(LIFT_ENCODER_ONE,LIFT_ENCODER_TWO);
+	//this->LiftEncoder = new Encoder(LIFT_ENCODER_ONE,LIFT_ENCODER_TWO);
 	this->UpLimit = new DigitalInput(LIFT_UP_LIMITER);
 	this->BottomLimit = new DigitalInput(LIFT_BOTTOM_LIMITER);
 
-	this->LiftEncoder->Reset();
-	this->LiftEncoder->SetDistancePerPulse(2 * M_PI * RADIUS);
+	//this->LiftEncoder->Reset();
+	//this->LiftEncoder->SetDistancePerPulse(2 * M_PI * RADIUS);
 }
 
 void Lift::InitDefaultCommand()
@@ -45,5 +45,5 @@ float Lift::GetHeight()
 
 Encoder *Lift::GetLiftEncoder()
 {
-	return this->LiftEncoder;
+	return NULL;//this->LiftEncoder;
 }

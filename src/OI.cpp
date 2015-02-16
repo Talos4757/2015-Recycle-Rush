@@ -4,6 +4,7 @@
 #include "Commands/DropLift.h"
 #include "Commands/UndropLift.h"
 #include "Commands/SlowOmni.h"
+#include "Commands/OpenClose.h"
 
 OI::OI()
 {
@@ -14,10 +15,14 @@ OI::OI()
 	this->AutonDown->WhenPressed(new AutoDown());
 
 	this->SlowDrive = new JoystickButton(this->GetDriverStick(),1);
-	this->SlowDrive->WhenPressed(new SlowOmni());
-	this->SlowDrive->WhenReleased(new DriveOmni3D());
-	this->DropLiftBtn = new JoystickButton(this->GetLifterStick(),2);
-	this->DropLiftBtn->WhenPressed(new DropLift);
+	//this->SlowDrive->WhenPressed(new DriveOmni3D());
+	//this->SlowDrive->WhenReleased(new SlowOmni());
+	this->SlowDrive->WhileHeld(new DriveOmni3D());
+	//this->DropLiftBtn = new JoystickButton(this->GetLifterStick(),2);
+	//this->DropLiftBtn->WhenPressed(new DropLift);
+
+	this->OpenCloseCommand = new JoystickButton(this->GetLifterStick(),2);
+	this->OpenCloseCommand->WhenPressed(new OpenClose());
 }
 
 Joystick *OI::GetDriverStick()

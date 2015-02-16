@@ -24,6 +24,7 @@ float DriveOmni3D::LimitMiddle(float x)
 
 void DriveOmni3D::Execute()
 {
+	SmartDashboard::PutBoolean("DrivingSlow",false);
 	float y = oi->GetDriverStick()->GetY();
 	float x = LimitMiddle(oi->GetDriverStick()->GetX());
 	float z = oi->GetDriverStick()->GetTwist();
@@ -40,7 +41,7 @@ void DriveOmni3D::Execute()
 			z = Helper::ReMap(ValueRange(-ZDEADZONE,-1),ValueRange(0,-1),z);
 		else
 			z = Helper::ReMap(ValueRange(ZDEADZONE,1),ValueRange(0,1),z);
-		chassis->GetRobotDrive()->ArcadeDrive(y,-oi->GetDriverStick()->GetRawAxis(Z_CHANNEL));
+		chassis->GetRobotDrive()->ArcadeDrive(y,-z,false);
 		chassis->GetMiddleMotor()->SetSpeed(0);
 		//chassis->GetRobotDrive()->ArcadeDrive(oi->GetDriverStick(),Y_CHANNEL,oi->GetDriverStick(),Z_CHANNEL);
 		//chassis->GetRobotDrive()->TankDrive(z,-z,false);

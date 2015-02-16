@@ -14,7 +14,7 @@ void LiftSetter::Execute()
 {
 	if(lift->IsDownmost())
 	{
-		lift->GetLiftEncoder()->Reset();
+		//lift->GetLiftEncoder()->Reset();
 	}
 	SmartDashboard::PutBoolean("lift up most",lift->IsTopmost());
 	SmartDashboard::PutBoolean("lift down most",lift->IsDownmost());

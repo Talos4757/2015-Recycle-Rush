@@ -15,6 +15,7 @@ public:
 class Helper{
 public:
 	static float ReMap(ValueRange original, ValueRange destination, float value);
+	static float IncreaseSpeed(float speed, int pow);
 };
 
 #endif
