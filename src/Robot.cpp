@@ -7,11 +7,12 @@ class Robot: public IterativeRobot
 private:
 	Command *autonomousCommand;
 	LiveWindow *lw;
+	Timer *t;
 
 	void RobotInit()
 	{
 		CommandBase::Init();
-		autonomousCommand = new AutonCommand();
+		autonomousCommand = NULL;
 		lw = LiveWindow::GetInstance();
 	}
 	
@@ -38,12 +39,16 @@ private:
 		// teleop starts running. If you want the autonomous to 
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
+		t= new Timer();
+		t->Start();
 		if (autonomousCommand != NULL)
 			autonomousCommand->Cancel();
 	}
 
 	void TeleopPeriodic()
 	{
+		SmartDashboard::PutString("currentGripCommand",	CommandBase::gripper->GetCurrentCommand()->GetName());
+		SmartDashboard::PutNumber("timer",135-t->Get());
 		Scheduler::GetInstance()->Run();
 	}
 

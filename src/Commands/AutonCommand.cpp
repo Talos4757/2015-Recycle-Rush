@@ -8,8 +8,8 @@
 
 AutonCommand::AutonCommand()
 {
-	AddSequential(new AutoGripSetter(GRIP_SPEED,0));
-	AddSequential(new AutoLiftSetter(LIFT_SPEED,0));
+	AddSequential(new AutoGripSetter(GRIP_SPEED,0.1));
+	AddSequential(new AutoLiftSetter(LIFT_SPEED,0.1));
 
 	AddSequential(new AutoDrive(0.8f));
 

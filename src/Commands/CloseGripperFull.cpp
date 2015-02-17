@@ -10,6 +10,7 @@ void CloseGripperFull::Initialize()
 
 void CloseGripperFull::Execute()
 {
+	SmartDashboard::PutBoolean("ClosingGrip",true);
 	gripper->GetGripperMotor()->SetSpeed(-1);
 }
 
@@ -20,6 +21,7 @@ bool CloseGripperFull::IsFinished()
 
 void CloseGripperFull::End()
 {
+	SmartDashboard::PutBoolean("ClosingGrip",false);
 	gripper->GetGripperMotor()->SetSpeed(0);
 	Cancel();
 }

@@ -17,8 +17,8 @@ CommandBase::CommandBase() :Command()
 
 void CommandBase::Init()
 {
-	oi = new OI();
 	lift = new Lift();
 	chassis = new Chassis();
 	gripper =new Gripper();
+	oi = new OI(); //MUST BE LAST
 }

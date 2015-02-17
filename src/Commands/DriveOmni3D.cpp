@@ -19,7 +19,7 @@ void DriveOmni3D::Initialize()
 
 float DriveOmni3D::LimitMiddle(float x)
 {
-	return (x*x*x);
+	return (x*x);
 }
 
 void DriveOmni3D::Execute()

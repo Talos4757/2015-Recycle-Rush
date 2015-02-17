@@ -26,6 +26,7 @@ void GripSetter::Execute()
 		((x < -DEADZONE) && !gripper->IsFullyOpened()) //opposite situation here
 		)
 	{
+		SmartDashboard::PutBoolean("moving middle",true);
 		//if(x<0) //remap the values so there is no deadzone, if joystick is at DEADZONE value will be 0 //apperantly 0-somenumber is a deadrange
 		//	x = Helper::ReMap(ValueRange(-DEADZONE,-1.0f), ValueRange(-0.3f,-1.0f),x);
 		//else
@@ -34,6 +35,7 @@ void GripSetter::Execute()
 	}
 	else
 	{
+		SmartDashboard::PutBoolean("moving middle",false);
 		gripper->GetGripperMotor()->SetSpeed(0);
 	}
 }
