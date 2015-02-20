@@ -1,13 +1,20 @@
-#ifndef DRIVEOMNI_H_
-#define DRIVEOMNI_H_
+/*
+ * SlowOmni.h
+ *
+ *  Created on: 11 αταψ 2015
+ *      Author: User
+ */
+
+#ifndef SLOW_OMNI_H
+#define SLOW_OMNI_H
 
 #include "../CommandBase.h"
 #include "SmartDashboard/SmartDashboard.h"
 
-class DriveOmni: public CommandBase
+class SlowOmni: public CommandBase
 {
 public:
-	DriveOmni();
+	SlowOmni();
 
 	virtual void Initialize();
 	virtual void Execute();
@@ -17,4 +24,6 @@ public:
 };
 
 
-#endif /* DRIVEOMNI_H_ */
+
+
+#endif /* SRC_COMMANDS_SLOWOMNI_H_ */

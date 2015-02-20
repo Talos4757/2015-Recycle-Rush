@@ -1,20 +1,23 @@
-#ifndef DRIVEOMNI_H_
-#define DRIVEOMNI_H_
+#ifndef AutoDrive_H_
+#define AutoDrive_H_
 
-#include "../CommandBase.h"
+#include "../../CommandBase.h"
 #include "SmartDashboard/SmartDashboard.h"
 
-class DriveOmni: public CommandBase
+class AutoDrive: public CommandBase
 {
 public:
-	DriveOmni();
+	AutoDrive(float step);
 
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+
+private:
+	float step;
 };
 
 
-#endif /* DRIVEOMNI_H_ */
+#endif /* AutoDrive_H_ */

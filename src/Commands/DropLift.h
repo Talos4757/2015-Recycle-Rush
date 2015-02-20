@@ -1,13 +1,13 @@
-#ifndef EXAMPLE_COMMAND_H
-#define EXAMPLE_COMMAND_H
+#ifndef DROP_LIFT_H_
+#define DROP_LIFT_H_
 
 #include "../CommandBase.h"
 #include "WPILib.h"
 
-class ExampleCommand: public CommandBase
+class DropLift: public CommandBase
 {
 public:
-	ExampleCommand();
+	DropLift();
 	void Initialize();
 	void Execute();
 	bool IsFinished();

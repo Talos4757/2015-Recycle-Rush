@@ -1,23 +1,24 @@
+#include <Commands/AutonCommand.h>
 #include "WPILib.h"
 #include "Commands/Command.h"
-#include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
-
 class Robot: public IterativeRobot
 {
 private:
 	Command *autonomousCommand;
 	LiveWindow *lw;
+	Timer *t;
 
 	void RobotInit()
 	{
-		CommandBase::init();
-		autonomousCommand = new ExampleCommand();
+		CommandBase::Init();
+		autonomousCommand = NULL;
 		lw = LiveWindow::GetInstance();
 	}
 	
 	void DisabledPeriodic()
 	{
+
 		Scheduler::GetInstance()->Run();
 	}
 
@@ -38,12 +39,16 @@ private:
 		// teleop starts running. If you want the autonomous to 
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
+		t= new Timer();
+		t->Start();
 		if (autonomousCommand != NULL)
 			autonomousCommand->Cancel();
 	}
 
 	void TeleopPeriodic()
 	{
+		SmartDashboard::PutString("currentGripCommand",	CommandBase::gripper->GetCurrentCommand()->GetName());
+		SmartDashboard::PutNumber("timer",135-t->Get());
 		Scheduler::GetInstance()->Run();
 	}
 

@@ -1,17 +1,21 @@
-#ifndef OI_H
-#define OI_H
+#ifndef OI_H_
+#define OI_H_
 
 #include "WPILib.h"
+#include "RobotMap.h"
 
 class OI
 {
 private:
-	Joystick *leftStick, *rightStick;
+	const int DRIVE_LEFT_JOYSTICK = 0;
+	const int LIFTER_RIGHT_JOYSTICK = 1;
+	Joystick *Driver_LeftStick, *Lifter_RightStick;
+	JoystickButton *DropLiftBtn, *SlowDrive, *AutonDown, *OpenCloseCommand;
 
 public:
 	OI();
-	Joystick *getLeftStick();
-	Joystick *getRightStick();
+	Joystick* GetLifterStick();
+	Joystick* GetDriverStick();
 };
 
 #endif

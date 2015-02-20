@@ -1,13 +1,13 @@
-#ifndef DRIVEOMNI_H_
-#define DRIVEOMNI_H_
+#ifndef AutoCommand_H_
+#define AutoCommand_H_
 
 #include "../CommandBase.h"
 #include "SmartDashboard/SmartDashboard.h"
 
-class DriveOmni: public CommandBase
+class AutonCommand:  public CommandGroup
 {
 public:
-	DriveOmni();
+	AutonCommand();
 
 	virtual void Initialize();
 	virtual void Execute();
@@ -17,4 +17,4 @@ public:
 };
 
 
-#endif /* DRIVEOMNI_H_ */
+#endif /* AutoCommand_H_ */

@@ -1,13 +1,13 @@
-#ifndef DRIVEOMNI_H_
-#define DRIVEOMNI_H_
+#ifndef GRIP_SETTER_H_
+#define GRIP_SETTER_H_
 
 #include "../CommandBase.h"
 #include "SmartDashboard/SmartDashboard.h"
 
-class DriveOmni: public CommandBase
+class GripSetter: public CommandBase
 {
 public:
-	DriveOmni();
+	GripSetter();
 
 	virtual void Initialize();
 	virtual void Execute();
@@ -17,4 +17,4 @@ public:
 };
 
 
-#endif /* DRIVEOMNI_H_ */
+#endif /* GRIP_SETTER_H_ */

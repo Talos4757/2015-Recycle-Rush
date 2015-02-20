@@ -1,28 +1,24 @@
 #include "CommandBase.h"
-#include "Subsystems/ExampleSubsystem.h"
-#include "Commands/Scheduler.h"
 
-// Initialize a single static instance of all of your subsystems to NULL
-ExampleSubsystem* CommandBase::examplesubsystem = NULL;
-Chassis* CommandBase::chassis = NULL;
 OI* CommandBase::oi = NULL;
+Chassis* CommandBase::chassis = NULL;
+Lift* CommandBase::lift=NULL;
+Gripper* CommandBase::gripper=NULL;
 
-CommandBase::CommandBase(char const *name) :
-		Command(name)
+/*CommandBase::CommandBase(char const *name) : Command(name)
+{
+
+
+}*/
+
+CommandBase::CommandBase() :Command()
 {
 }
 
-CommandBase::CommandBase() :
-		Command()
+void CommandBase::Init()
 {
-
-}
-
-void CommandBase::init()
-{
-	// Create a single static instance of all of your subsystems. The following
-	// line should be repeated for each subsystem in the project.
-	examplesubsystem = new ExampleSubsystem();
+	lift = new Lift();
 	chassis = new Chassis();
-	oi = new OI();
+	gripper =new Gripper();
+	oi = new OI(); //MUST BE LAST
 }

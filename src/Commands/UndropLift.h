@@ -1,13 +1,13 @@
-#ifndef DRIVEROTATE_H
-#define DRIVEROTATE_H
+#ifndef UndropLift_H
+#define UndropLift_H
 
 #include "../CommandBase.h"
 #include "WPILib.h"
 
-class DriveRotate: public CommandBase
+class UndropLift: public CommandBase
 {
 public:
-	DriveRotate();
+	UndropLift();
 	void Initialize();
 	void Execute();
 	bool IsFinished();

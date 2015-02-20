@@ -1,13 +1,15 @@
-#ifndef DRIVEOMNI_H_
-#define DRIVEOMNI_H_
+#ifndef DRIVEOMNI3D_H
+#define DRIVEOMNI3D_H
 
 #include "../CommandBase.h"
 #include "SmartDashboard/SmartDashboard.h"
 
-class DriveOmni: public CommandBase
+class DriveOmni3D: public CommandBase
 {
+private:
+	float LimitMiddle(float x);
 public:
-	DriveOmni();
+	DriveOmni3D();
 
 	virtual void Initialize();
 	virtual void Execute();
@@ -17,4 +19,4 @@ public:
 };
 
 
-#endif /* DRIVEOMNI_H_ */
+#endif /* DRIVEOMNI3D_H_ */

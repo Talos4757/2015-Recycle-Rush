@@ -1,13 +1,13 @@
-#ifndef DRIVEOMNI_H_
-#define DRIVEOMNI_H_
+#ifndef DRIVEARCADE_H_
+#define DRIVEARCADE_H_
 
 #include "../CommandBase.h"
 #include "SmartDashboard/SmartDashboard.h"
 
-class DriveOmni: public CommandBase
+class DriveArcade: public CommandBase
 {
 public:
-	DriveOmni();
+	DriveArcade();
 
 	virtual void Initialize();
 	virtual void Execute();
@@ -17,4 +17,4 @@ public:
 };
 
 
-#endif /* DRIVEOMNI_H_ */
+#endif /* DRIVEARCADE_H_ */

@@ -1,34 +1,21 @@
 #ifndef ROBOTMAP_H
 #define ROBOTMAP_H
 
-#include "WPILib.h"
+#include "JoystickMap.h"
 
-/**
- * The RobotMap is a mapping from the ports sensors and actuators are wired into
- * to a variable name. This provides flexibility changing wiring, makes checking
- * the wiring easier and significantly reduces the number of magic numbers
- * floating around.
- */
- 
-// For example to map the left and right motors, you could define the
-// following variables to use with your drivetrain subsystem.
-//const int LEFTMOTOR = 1;
-//const int RIGHTMOTOR = 2;
+#define CH_RIGHT_MOTOR 0
+#define CH_LEFT_MOTOR 5
+#define CH_MIDDLE_MOTOR 4
 
-// If you are using multiple modules, make sure to define both the port
-// number and the module. For example you with a rangefinder:
-//const int RANGE_FINDER_PORT = 1;
-//const int RANGE_FINDER_MODULE = 1;
+#define LIFT_ENGINE 3
+#define GRIP_ENGINE 1
 
-//change this to real values
-const int FRONT_LEFT_MOTOR = 1;
-const int FRONT_RIGHT_MOTOR = 2;
-const int REAR_LEFT_MOTOR = 3;
-const int REAR_RIGHT_MOTOR = 4;
+#define GRIP_OPEN_LIMITER 0
+#define GRIP_CLOSE_LIMITER 1
+#define LIFT_UP_LIMITER 2
+#define LIFT_BOTTOM_LIMITER 3
 
-const int MIDDLE_MOTOR = 5;
-
-const int LEFT_JOYSTICK = 1;
-const int RIGHT_JOYSTICK = 2;
+#define LIFT_ENCODER_ONE 9
+#define LIFT_ENCODER_TWO 8
 
 #endif
