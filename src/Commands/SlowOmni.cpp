@@ -23,7 +23,6 @@ void SlowOmni::Initialize()
 
 void SlowOmni::Execute()
 {
-	SmartDashboard::PutBoolean("DrivingSlow",true);
 	float y = oi->GetDriverStick()->GetY();
 	if(y>0)
 		y = Helper::ReMap(ValueRange(0,1), ValueRange(0,0.8),y);

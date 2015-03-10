@@ -8,12 +8,6 @@ class AutonCommand:  public CommandGroup
 {
 public:
 	AutonCommand();
-
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
 };
 
 

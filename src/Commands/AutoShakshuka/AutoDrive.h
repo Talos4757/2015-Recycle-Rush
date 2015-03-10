@@ -16,7 +16,7 @@ public:
 	virtual void Interrupted();
 
 private:
-	float step;
+	float timeout;
 };
 
 

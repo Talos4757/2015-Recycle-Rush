@@ -11,8 +11,8 @@ OI::OI()
 	this->Driver_LeftStick = new Joystick(DRIVE_LEFT_JOYSTICK);
 	this->Lifter_RightStick = new Joystick(LIFTER_RIGHT_JOYSTICK);
 
-	//this->AutonDown = new JoystickButton(this->GetLifterStick(),1);
-	//this->AutonDown->WhenPressed(new AutoDown());
+	this->AutonDown = new JoystickButton(this->GetLifterStick(),1);
+	this->AutonDown->WhenPressed(new AutoDown());
 
 	this->SlowDrive = new JoystickButton(this->GetDriverStick(),1);
 	this->SlowDrive->WhileHeld(new DriveOmni3D());

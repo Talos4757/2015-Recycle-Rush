@@ -15,7 +15,6 @@ void AutoGripSetter::Initialize()
 
 void AutoGripSetter::Execute()
 {
-	SmartDashboard::PutNumber("gripper auto speed",this->speed);
 	gripper->GetGripperMotor()->SetSpeed(this->speed);
 }
 

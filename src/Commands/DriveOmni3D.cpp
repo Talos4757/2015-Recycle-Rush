@@ -24,7 +24,6 @@ float DriveOmni3D::LimitMiddle(float x)
 
 void DriveOmni3D::Execute()
 {
-	SmartDashboard::PutBoolean("DrivingSlow",false);
 	float y = oi->GetDriverStick()->GetY();
 	float x = LimitMiddle(oi->GetDriverStick()->GetX());
 	float z = oi->GetDriverStick()->GetTwist();

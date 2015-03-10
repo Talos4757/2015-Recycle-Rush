@@ -19,7 +19,7 @@ void AutoLiftSetter::Execute()
 
 bool AutoLiftSetter::IsFinished()
 {
-	return false;
+	return IsTimedOut();
 }
 
 void AutoLiftSetter::End()
