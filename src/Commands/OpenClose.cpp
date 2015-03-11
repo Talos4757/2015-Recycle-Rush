@@ -1,6 +1,6 @@
 #include "OpenClose.h"
-#include "AutoShakshuka/AutoGripSetter.h"
-#include "AutoShakshuka/AutoLiftSetter.h"
+#include "AutoGripSetter.h"
+#include "AutoLiftSetter.h"
 
 #define GRIP_SPEED 1.0f
 

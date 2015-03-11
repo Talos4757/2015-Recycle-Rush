@@ -1,33 +1,30 @@
 #include "AutoDrive.h"
 
-AutoDrive::AutoDrive(float timee)
+AutoDrive::AutoDrive()
 {
 	Requires(chassis);
-	this->timeout = timee;
 }
 
 void AutoDrive::Initialize()
 {
-	SetTimeout(this->timeout);
 }
 
 void AutoDrive::Execute()
 {
-	//if(this->step == 0)
-		chassis->GetRobotDrive()->TankDrive(1.0f,1.0f,true);
+	chassis->GetRobotDrive()->TankDrive(-0.5,-0.5);
 }
 
 bool AutoDrive::IsFinished()
 {
-	return IsTimedOut();
+	return false;
 }
 
 void AutoDrive::End()
 {
-	Cancel();
+
 }
 
 void AutoDrive::Interrupted()
 {
-	End();
+
 }

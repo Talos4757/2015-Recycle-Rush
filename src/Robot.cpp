@@ -1,4 +1,4 @@
-#include <Commands/AutonCommand.h>
+#include "Commands/AutoCommandGroup.h"
 #include "WPILib.h"
 #include "Commands/Command.h"
 #include "CommandBase.h"
@@ -12,7 +12,7 @@ private:
 	void RobotInit()
 	{
 		CommandBase::Init();
-		autonomousCommand = NULL;//new AutonCommand();
+		autonomousCommand = new AutoCommandGroup();
 		lw = LiveWindow::GetInstance();
 	}
 	

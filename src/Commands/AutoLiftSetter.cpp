@@ -1,4 +1,4 @@
-#include <Commands/AutoShakshuka/AutoLiftSetter.h>
+#include "AutoLiftSetter.h"
 
 AutoLiftSetter::AutoLiftSetter(float s, float st)
 {

@@ -1,7 +1,7 @@
 #ifndef AUTO_LIFT_SETTER_H_
 #define AUTO_LIFT_SETTER_H_
 
-#include "../../CommandBase.h"
+#include "../CommandBase.h"
 #include "SmartDashboard/SmartDashboard.h"
 
 class AutoLiftSetter: public CommandBase
