@@ -18,7 +18,9 @@ void LiftSetter::Execute()
 	}
 	SmartDashboard::PutBoolean("lift up most",lift->IsTopmost());
 	SmartDashboard::PutBoolean("lift down most",lift->IsDownmost());
-	if(
+	if(lift->GetBoolean())
+	{
+		if(
 			(oi->GetLifterStick()->GetY() < -0.15 && !lift->IsTopmost()) //lowering the lift while topmost is OK
 			||
 			(oi->GetLifterStick()->GetY() > 0.15 && !lift->IsDownmost()) //opposite situation here
@@ -29,6 +31,22 @@ void LiftSetter::Execute()
 	else
 	{
 		lift->GetLiftMotor()->SetSpeed(0);
+	}
+	}
+	else
+	{
+		if(
+			(oi->GetLifterStick()->GetY() < -0.15) //lowering the lift while topmost is OK
+			||
+			(oi->GetLifterStick()->GetY() > 0.15 ) //opposite situation here
+	)
+	{
+		lift->GetLiftMotor()->SetSpeed(oi->GetLifterStick()->GetY());
+	}
+	else
+	{
+		lift->GetLiftMotor()->SetSpeed(0);
+	}
 	}
 }
 

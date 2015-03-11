@@ -13,7 +13,9 @@ private:
 	Victor *LiftMotor;
 	DigitalInput *UpLimit, *BottomLimit;
 	Encoder *LiftEncoder;
+	bool Switches;
 public:
+
 	Lift();
 	void InitDefaultCommand();
 	bool IsTopmost();
@@ -21,6 +23,8 @@ public:
 	float GetHeight();
 	Victor *GetLiftMotor();
 	Encoder *GetLiftEncoder();
+	void SwitchBoolean();
+	bool GetBoolean();
 };
 
 #endif /* LIFT_H_ */

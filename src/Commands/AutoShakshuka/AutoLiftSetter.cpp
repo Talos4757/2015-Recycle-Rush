@@ -24,7 +24,7 @@ bool AutoLiftSetter::IsFinished()
 
 void AutoLiftSetter::End()
 {
-	Cancel();
+
 }
 
 void AutoLiftSetter::Interrupted()

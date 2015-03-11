@@ -8,6 +8,7 @@ Gripper::Gripper() : Subsystem("Gripper")
 	GripperMotor->SetExpiration(0.3);
 	this->open = new DigitalInput(GRIP_OPEN_LIMITER);
 	this->close = new DigitalInput(GRIP_CLOSE_LIMITER);
+	this->Switches=true;
 }
 
 void Gripper::InitDefaultCommand()
@@ -28,4 +29,12 @@ bool Gripper::IsFullyOpened()
 bool Gripper::IsFullyClosed()
 {
 	return !this->close->Get();
+}
+bool Gripper::GetSwitches()
+{
+	return this->Switches;
+}
+void Gripper::SwitchSwitches()
+{
+	this->Switches=!this->Switches;
 }

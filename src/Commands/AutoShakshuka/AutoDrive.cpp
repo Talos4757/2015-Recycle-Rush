@@ -24,7 +24,7 @@ bool AutoDrive::IsFinished()
 
 void AutoDrive::End()
 {
-	Cancel();
+
 }
 
 void AutoDrive::Interrupted()

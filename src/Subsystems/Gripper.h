@@ -16,12 +16,15 @@ class Gripper : public Subsystem
 private:
 	Talon *GripperMotor;
 	DigitalInput *open, *close;
+	bool Switches;
 public:
 	Gripper();
 	void InitDefaultCommand();
 	Talon* GetGripperMotor();
 	bool IsFullyClosed();
 	bool IsFullyOpened();
+	bool GetSwitches();
+	void SwitchSwitches();
 };
 
 #endif /* GRIPPER_H_ */

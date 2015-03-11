@@ -29,7 +29,6 @@ bool AutoGripSetter::IsFinished()
 
 void AutoGripSetter::End()
 {
-	Cancel();
 }
 
 void AutoGripSetter::Interrupted()

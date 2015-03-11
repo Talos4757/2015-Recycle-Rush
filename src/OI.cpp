@@ -5,7 +5,7 @@
 #include "Commands/UndropLift.h"
 #include "Commands/SlowOmni.h"
 #include "Commands/OpenClose.h"
-
+#include "Commands/Switcher.h"
 OI::OI()
 {
 	this->Driver_LeftStick = new Joystick(DRIVE_LEFT_JOYSTICK);
@@ -21,6 +21,9 @@ OI::OI()
 
 	this->OpenCloseCommand = new JoystickButton(this->GetLifterStick(),2);
 	this->OpenCloseCommand->WhenPressed(new OpenClose());
+
+	this->Switcherrrr=new JoystickButton(this->GetLifterStick(),5);
+	this->Switcherrrr->WhenPressed(new Switcher());
 }
 
 Joystick *OI::GetDriverStick()
